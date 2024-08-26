@@ -6,7 +6,10 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const db = require('../models');
+const db = require('./models');
+//const db = require('./.config/models');
+
+
 db.sequelize.sync();
 
 require('./routes/emailTemplate.routes')(app);
